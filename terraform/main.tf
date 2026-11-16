@@ -115,14 +115,15 @@ resource "aws_internet_gateway" "igw" {
 resource "aws_route_table" "public_rt" {
   vpc_id = aws_vpc.devops_vpc.id
 
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.igw.id
-  }
-
   tags = {
     Name = "DevOps-RouteTable"
   }
+}
+
+resource "aws_route" "public-route" {
+  route_table_id = aws_route_table.public_rt.id
+  destination_cidr_block = "0.0.0.0/0"
+  gateway_id = aws_internet_gateway.igw.id
 }
 
 #################################
@@ -180,7 +181,7 @@ resource "aws_dynamodb_table" "tf_lock" {
 ###############################################################################
 
 resource "aws_instance" "devops_vm" {
-  ami           = "ami-0d97d7f07b25dd693" # Ubuntu 22.04 LTS
+  ami           = "ami-0547ecbf0e9b4aeb5" # Ubuntu 22.04 LTS
   instance_type = "m7i-flex.large"
   key_name      = "sai-virginia"
 
