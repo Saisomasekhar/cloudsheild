@@ -35,4 +35,17 @@ build/
 
 .terraform/
 *.tfstate
+*.tfstate.*
 *.tfstate.backup
+crash.log
+crash.*.log
+
+# Terraform variable files containing secrets
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# Sensitive files
+*.pem
+*.key
+*.secret
