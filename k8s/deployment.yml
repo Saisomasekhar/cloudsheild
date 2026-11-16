@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: devops-app-container
-        image: devops-app-repo
+        image: devops-app-repo:latest
         ports:
         - containerPort: 8080
