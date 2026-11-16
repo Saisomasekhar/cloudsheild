@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: devops-app-container
-        image: IMAGE_PLACEHOLDER
+        image: devops-app-repo
         ports:
         - containerPort: 8080
