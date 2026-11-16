@@ -1,0 +1,16 @@
+# Terraform generated files
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+
+# Terraform variable files containing secrets
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+
+# Sensitive files
+*.pem
+*.key
+*.secret
